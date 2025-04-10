@@ -3,11 +3,11 @@
 A Ruby wrapper for the WooCommerce REST API. Easily interact with the WooCommerce REST API using this library, optimized for Ruby 3.0+.
 
 [![Gem Version](https://badge.fury.io/rb/woocommerce-ruby3-api.svg)](https://badge.fury.io/rb/woocommerce-ruby3-api)
-[![Test and Security Check](https://github.com/chemica/woocommerce-ruby3-api/actions/workflows/test.yml/badge.svg)](https://github.com/chemica/woocommerce-ruby3-api/actions/workflows/test.yml)
+[![Tests](https://github.com/chemica/woocommerce-ruby3-api/actions/workflows/test.yml/badge.svg?branch=main)](https://github.com/chemica/woocommerce-ruby3-api/actions/workflows/test.yml)
 
 ## About
 
-This is a fork of the [WooCommerce REST API - Ruby Client](https://github.com/woocommerce/wc-api-ruby) that has been updated to be compatible with modern Ruby versions (3.0+).
+This is a fork of the [WooCommerce REST API - Ruby Client](https://github.com/woocommerce/wc-api-ruby) that has been updated to be compatible with modern Ruby versions (3.1+).
 
 Key changes from the original:
 - Fixed deprecated `URI.encode` calls using `Addressable::URI`
@@ -16,7 +16,7 @@ Key changes from the original:
 - Improved test organization
 - Modern CI workflow with GitHub Actions
 - Automated dependency updates with Dependabot
-- Security scanning with Brakeman
+- Security scanning with bundler-audit
 
 ## Installation
 
