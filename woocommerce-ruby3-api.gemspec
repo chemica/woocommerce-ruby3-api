@@ -19,7 +19,6 @@ Gem::Specification.new do |s|
   s.email       = "ben@chemica.co.uk"
   s.files       = Dir["lib/woocommerce_api.rb", "lib/woocommerce_api/*.rb", "lib/woocommerce-ruby3-api.rb"]
   s.homepage    = "https://github.com/chemica/woocommerce-ruby3-api"
-  s.homepage    = "https://github.com/chemica/woocommerce-ruby3-api"
   s.required_ruby_version = ">= 3.0.2"
 
   s.rdoc_options = ["--charset=UTF-8"]
