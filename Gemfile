@@ -1,10 +1,8 @@
+# frozen_string_literal: true
+
 source "https://rubygems.org"
 
-gem "httparty"
-gem "json"
+# Specify your gem's dependencies in woocommerce_api.gemspec
+gemspec
 
-group :test do
-  gem "rake"
-  gem "minitest"
-  gem "fakeweb"
-end
+# Development dependencies will be added by the gemspec
