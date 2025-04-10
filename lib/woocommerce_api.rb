@@ -1,5 +1,10 @@
+# frozen_string_literal: true
+
 require "httparty"
 require "json"
+require "cgi"
+require "cgi"
+require "addressable/uri"
 
 require "woocommerce_api/oauth"
 require "woocommerce_api/version"
@@ -97,7 +102,7 @@ module WooCommerce
 
       endpoint += "?" unless endpoint.include? "?"
       endpoint += "&" unless endpoint.end_with? "?"
-      endpoint + URI.encode(flatten_hash(data).join("&"))
+      endpoint + Addressable::URI.encode(flatten_hash(data).join("&"))
     end
 
     # Internal: Get URL for requests

@@ -7,18 +7,19 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require_relative "lib/woocommerce_api/version"
 
 Gem::Specification.new do |s|
-  s.name        = "woocommerce_api"
+  s.name        = "woocommerce-ruby3-api"
   s.version     = WooCommerce::VERSION
   s.date        = "2025-10-04"
 
-  s.summary     = "A Ruby wrapper for the WooCommerce API"
-  s.description = "This gem provide a wrapper to deal with the WooCommerce REST API"
+  s.summary     = "A Ruby 3+ wrapper for the WooCommerce API"
+  s.description = "This gem provides a wrapper to access the WooCommerce REST API, optimized for Ruby 3+"
   s.license     = "MIT"
 
-  s.authors     = ["Claudio Sanches"]
-  s.email       = "claudio@automattic.com"
-  s.files       = Dir["lib/woocommerce_api.rb", "lib/woocommerce_api/*.rb"]
-  s.homepage    = "https://github.com/woocommerce/wc-api-ruby"
+  s.authors     = ["Claudio Sanches", "Benjamin Randles-Dunkley"]
+  s.email       = "ben@chemica.co.uk"
+  s.files       = Dir["lib/woocommerce_api.rb", "lib/woocommerce_api/*.rb", "lib/woocommerce-ruby3-api.rb"]
+  s.homepage    = "https://github.com/chemica/woocommerce-ruby3-api"
+  s.homepage    = "https://github.com/chemica/woocommerce-ruby3-api"
   s.required_ruby_version = ">= 3.0.2"
 
   s.rdoc_options = ["--charset=UTF-8"]
