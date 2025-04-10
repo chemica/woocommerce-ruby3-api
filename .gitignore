@@ -1,2 +1,47 @@
+# Build artifacts
 *.gem
+pkg/
+
+# Ruby environment
+.ruby-version
+.ruby-gemset
+.rvmrc
+.bundle/
+vendor/bundle/
+
+# Development files
+Gemfile.lock
+.env
+.env.*
 run.rb
+
+# Documentation
+.yardoc/
+doc/
+rdoc/
+
+# Test coverage
+coverage/
+.simplecov
+
+# Temp files
+*.swp
+*~
+.DS_Store
+tmp/
+
+# IDE specific files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Debug files
+*.log
+.byebug_history
+.pry_history
+
+# RSpec
+spec/reports/
+spec/examples.txt
+.rspec_status
