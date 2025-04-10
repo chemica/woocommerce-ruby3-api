@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    woocommerce_api (1.5.0)
+    woocommerce-ruby3-api (1.5.0)
       addressable (~> 2.8.1)
       base64 (~> 0.2.0)
       httparty (~> 0.23.1)
@@ -48,7 +48,7 @@ DEPENDENCIES
   minitest (~> 5.25.5)
   rake (~> 13.2.1)
   webmock (~> 3.25.1)
-  woocommerce_api!
+  woocommerce-ruby3-api!
 
 BUNDLED WITH
    2.6.2
