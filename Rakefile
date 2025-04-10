@@ -2,17 +2,16 @@
 
 require "bundler/gem_tasks"
 require "rake/testtask"
+require "bundler/audit/task"
 
 Rake::TestTask.new(:test) do |t|
   t.libs << "test"
   t.test_files = FileList["test/test.rb"]
 end
 
-desc "Run brakeman security scan"
-task :brakeman do
-  require "brakeman"
-  result = Brakeman.run(app_path: ".", output_files: ["brakeman-output.tabs"], print_report: true)
-  exit result.warnings.any? ? 1 : 0
-end
+Bundler::Audit::Task.new
 
-task default: :test
+desc "Run all checks (tests and security)"
+task check: [:test, "bundle:audit"]
+
+task default: :check

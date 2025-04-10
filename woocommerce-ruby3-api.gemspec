@@ -32,5 +32,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency "rake", "~> 13.2.1"
   s.add_development_dependency "minitest", "~> 5.25.5"
   s.add_development_dependency "webmock", "~> 3.25.1"
-  s.add_development_dependency "brakeman", "~> 7.0.2"
+  s.add_development_dependency "bundler-audit", "~> 0.9.1"
 end
