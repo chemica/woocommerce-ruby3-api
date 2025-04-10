@@ -17,7 +17,16 @@ Gem::Specification.new do |s|
 
   s.authors     = ["Claudio Sanches", "Benjamin Randles-Dunkley"]
   s.email       = "ben@chemica.co.uk"
-  s.files       = Dir["lib/woocommerce_api.rb", "lib/woocommerce_api/*.rb", "lib/woocommerce-ruby3-api.rb"]
+  
+  # Files included in the gem
+  s.files = Dir[
+    "lib/**/*.rb",
+    "README.md",
+    "LICENSE",
+    "*.gemspec"
+  ]
+  s.require_paths = ["lib"]
+  
   s.homepage    = "https://github.com/chemica/woocommerce-ruby3-api"
   s.required_ruby_version = ">= 3.1.0"
 
