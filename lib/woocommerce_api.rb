@@ -11,15 +11,12 @@ require "woocommerce_api/version"
 module WooCommerce
   class ApiBase
     DEFAULT_ARGS = {
-      wp_api: false,
-      version: "v3",
-      verify_ssl: true,
-      signature_method: "HMAC-SHA256",
-      httparty_args: {}
+      wp_api: false, version: "v3", verify_ssl: true,
+      signature_method: "HMAC-SHA256", httparty_args: {}
     }.freeze
+    SENSITIVE_ARGS = [:@consumer_key, :@consumer_secret, :@signature_method].freeze
 
     def initialize(url, consumer_key, consumer_secret, args = {})
-      # Required args
       @url = url
       @consumer_key = consumer_key
       @consumer_secret = consumer_secret
@@ -27,8 +24,19 @@ module WooCommerce
       args = DEFAULT_ARGS.merge(args)
       create_args_variables(args)
 
-      # Internal args
       @is_ssl = @url.start_with? "https"
+    end
+
+    # Overrides inspect to hide sensitive information
+    #
+    # Returns a string representation of the object
+    def inspect
+      safe_ivars = instance_variables.each_with_object({}) do |var, hash|
+        value = instance_variable_get(var)
+        hash[var] = SENSITIVE_ARGS.include?(var) ? "[FILTERED]" : value
+      end
+
+      "#<#{self.class}:0x#{object_id.to_s(16)} #{safe_ivars.map { |k, v| "#{k}=#{v.inspect}" }.join(', ')}>"
     end
 
     private

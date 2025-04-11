@@ -2,7 +2,7 @@
 
 A Ruby wrapper for the WooCommerce REST API. Easily interact with the WooCommerce REST API using this library, optimized for Ruby 3.0+.
 
-[![Gem Version](https://badge.fury.io/rb/woocommerce-ruby3-api.svg?bust=2)](https://badge.fury.io/rb/woocommerce-ruby3-api)
+[![Gem Version](https://badge.fury.io/rb/woocommerce-ruby3-api.svg?bust=3)](https://badge.fury.io/rb/woocommerce-ruby3-api)
 [![Tests](https://github.com/chemica/woocommerce-ruby3-api/actions/workflows/test.yml/badge.svg?branch=main&bust=1)](https://github.com/chemica/woocommerce-ruby3-api/actions/workflows/test.yml)
 
 ## About
@@ -208,6 +208,7 @@ puts response.headers["x-wc-totalpages"] # Total of pages
 ## Release History
 
 ### Ruby 3 Version (woocommerce-ruby3-api)
+- 2025-04-11 - 1.5.3 - Hides sensitive information from ruby "inspect". Prevents accidental exposure in logs or console output.
 - 2025-04-11 - 1.5.2 - Fixes gemfile.lock issue.
 - 2025-04-11 - 1.5.1 - Adds RuboCop for code quality. Fixes RuboCop violations. Refactors code and tests for easier maintainability.
 - 2025-04-10 - 1.5.0 - Update code for Ruby 3.1+ compatibility using Addressable::URI and base64 gem. Add Github CI actions.
