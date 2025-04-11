@@ -36,12 +36,6 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency "httparty", "~> 0.23.1"
   s.add_runtime_dependency "json", "~> 2.10.2", ">= 2.6.0"
 
-  s.add_development_dependency "bundler-audit", "~> 0.9.1"
-  s.add_development_dependency "minitest", "~> 5.25.5"
-  s.add_development_dependency "rake", "~> 13.2.1"
-  s.add_development_dependency "rubocop", "~> 1.59.0"
-  s.add_development_dependency "rubocop-minitest", "~> 0.34.5"
-  s.add_development_dependency "rubocop-performance", "~> 1.20.1"
-  s.add_development_dependency "webmock", "~> 3.25.1"
+  # Security measures
   s.metadata["rubygems_mfa_required"] = "true"
 end

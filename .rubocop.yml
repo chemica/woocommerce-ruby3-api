@@ -66,6 +66,10 @@ Naming/MethodParameterName:
     - of
     - up
 
+Naming/FileName:
+  Exclude:
+    - 'lib/woocommerce-ruby3-api.rb'
+
 # Minitest
 Minitest/MultipleAssertions:
   Max: 5 
