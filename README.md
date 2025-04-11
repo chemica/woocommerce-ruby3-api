@@ -5,6 +5,7 @@ A Ruby wrapper for the WooCommerce REST API. Easily interact with the WooCommerc
 [![Gem Version](https://badge.fury.io/rb/woocommerce-ruby3-api.svg?bust=1)](https://badge.fury.io/rb/woocommerce-ruby3-api)
 [![Tests](https://github.com/chemica/woocommerce-ruby3-api/actions/workflows/test.yml/badge.svg?branch=main&bust=1)](https://github.com/chemica/woocommerce-ruby3-api/actions/workflows/test.yml)
 
+
 ## About
 
 This is a fork of the [WooCommerce REST API - Ruby Client](https://github.com/woocommerce/wc-api-ruby) that has been updated to be compatible with modern Ruby versions (3.1+).
