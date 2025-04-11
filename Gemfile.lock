@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    woocommerce-ruby3-api (1.5.1)
+    woocommerce-ruby3-api (1.5.2)
       addressable (~> 2.8.1)
       base64 (~> 0.2.0)
       httparty (~> 0.23.1)
