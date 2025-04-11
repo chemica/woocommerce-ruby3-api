@@ -11,4 +11,4 @@ $LOAD_PATH.unshift File.expand_path("../lib", __dir__)
 require "woocommerce_api"
 
 # Disable real network connections in tests
-WebMock.disable_net_connect! 
+WebMock.disable_net_connect!

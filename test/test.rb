@@ -19,27 +19,27 @@ class WooCommerceAPITest < Minitest::Test
 
   def test_basic_auth_get
     stub_request(:get, "https://dev.test/wc-api/v3/customers")
-      .with(headers: { 'Authorization' => 'Basic dXNlcjpwYXNz' })
+      .with(headers: { "Authorization" => "Basic dXNlcjpwYXNz" })
       .to_return(status: 200, body: '{"customers":[]}', headers: { "Content-Type" => "application/json" })
-      
+
     response = @basic_auth.get "customers"
 
     assert_equal 200, response.code
   end
 
   def test_oauth_get
-    stub_request(:get, /http:\/\/dev\.test\/wc-api\/v3\/customers\?oauth_consumer_key=user/)
+    stub_request(:get, %r{http://dev\.test/wc-api/v3/customers\?oauth_consumer_key=user})
       .to_return(status: 200, body: '{"customers":[]}', headers: { "Content-Type" => "application/json" })
-      
+
     response = @oauth.get "customers"
 
     assert_equal 200, response.code
   end
 
   def test_oauth_get_puts_data_in_alpha_order
-    stub_request(:get, /http:\/\/dev\.test\/wc-api\/v3\/customers\?abc=123&oauth_consumer_key=user/)
+    stub_request(:get, %r{http://dev\.test/wc-api/v3/customers\?abc=123&oauth_consumer_key=user})
       .to_return(status: 200, body: '{"customers":[]}', headers: { "Content-Type" => "application/json" })
-      
+
     response = @oauth.get "customers", abc: "123", oauth_d: "456", xyz: "789"
 
     assert_equal 200, response.code
@@ -48,7 +48,7 @@ class WooCommerceAPITest < Minitest::Test
   def test_basic_auth_post
     stub_request(:post, "https://dev.test/wc-api/v3/products")
       .with(
-        headers: { 'Authorization' => 'Basic dXNlcjpwYXNz' },
+        headers: { "Authorization" => "Basic dXNlcjpwYXNz" },
         body: { product: { title: "Testing product" } }.to_json
       )
       .to_return(status: 201, body: '{"products":[]}', headers: { "Content-Type" => "application/json" })
@@ -64,7 +64,7 @@ class WooCommerceAPITest < Minitest::Test
   end
 
   def test_oauth_post
-    stub_request(:post, /http:\/\/dev\.test\/wc-api\/v3\/products\?oauth_consumer_key=user/)
+    stub_request(:post, %r{http://dev\.test/wc-api/v3/products\?oauth_consumer_key=user})
       .to_return(status: 201, body: '{"products":[]}', headers: { "Content-Type" => "application/json" })
 
     data = {
@@ -80,7 +80,7 @@ class WooCommerceAPITest < Minitest::Test
   def test_basic_auth_put
     stub_request(:put, "https://dev.test/wc-api/v3/products/1234")
       .with(
-        headers: { 'Authorization' => 'Basic dXNlcjpwYXNz' },
+        headers: { "Authorization" => "Basic dXNlcjpwYXNz" },
         body: { product: { title: "Updating product title" } }.to_json
       )
       .to_return(status: 200, body: '{"customers":[]}', headers: { "Content-Type" => "application/json" })
@@ -96,7 +96,7 @@ class WooCommerceAPITest < Minitest::Test
   end
 
   def test_oauth_put
-    stub_request(:put, /http:\/\/dev\.test\/wc-api\/v3\/products\?oauth_consumer_key=user/)
+    stub_request(:put, %r{http://dev\.test/wc-api/v3/products\?oauth_consumer_key=user})
       .to_return(status: 200, body: '{"products":[]}', headers: { "Content-Type" => "application/json" })
 
     data = {
@@ -111,7 +111,7 @@ class WooCommerceAPITest < Minitest::Test
 
   def test_basic_auth_delete
     stub_request(:delete, "https://dev.test/wc-api/v3/products/1234?force=true")
-      .with(headers: { 'Authorization' => 'Basic dXNlcjpwYXNz' })
+      .with(headers: { "Authorization" => "Basic dXNlcjpwYXNz" })
       .to_return(status: 202, body: '{"message":"Permanently deleted product"}', headers: { "Content-Type" => "application/json" })
 
     response = @basic_auth.delete "products/1234?force=true"
@@ -122,7 +122,7 @@ class WooCommerceAPITest < Minitest::Test
 
   def test_basic_auth_delete_params
     stub_request(:delete, "https://dev.test/wc-api/v3/products/1234?force=true")
-      .with(headers: { 'Authorization' => 'Basic dXNlcjpwYXNz' })
+      .with(headers: { "Authorization" => "Basic dXNlcjpwYXNz" })
       .to_return(status: 202, body: '{"message":"Permanently deleted product"}', headers: { "Content-Type" => "application/json" })
 
     response = @basic_auth.delete "products/1234", force: true
@@ -132,7 +132,7 @@ class WooCommerceAPITest < Minitest::Test
   end
 
   def test_oauth_delete
-    stub_request(:delete, /http:\/\/dev\.test\/wc-api\/v3\/products\/1234\?force=true&oauth_consumer_key=user/)
+    stub_request(:delete, %r{http://dev\.test/wc-api/v3/products/1234\?force=true&oauth_consumer_key=user})
       .to_return(status: 202, body: '{"message":"Permanently deleted product"}', headers: { "Content-Type" => "application/json" })
 
     response = @oauth.delete "products/1234?force=true"
@@ -143,11 +143,12 @@ class WooCommerceAPITest < Minitest::Test
 
   def test_adding_query_params
     url = @oauth.send(:add_query_params, "foo.com", filter: { sku: "123" }, order: "created_at")
+
     assert_equal url, Addressable::URI.encode("foo.com?filter[sku]=123&order=created_at")
   end
 
   def test_invalid_signature_method
-    assert_raises WooCommerce::OAuth::InvalidSignatureMethodError do 
+    assert_raises WooCommerce::OAuth::InvalidSignatureMethodError do
       client = WooCommerce::API.new("http://dev.test/", "user", "pass", signature_method: "GARBAGE")
       client.get "products"
     end

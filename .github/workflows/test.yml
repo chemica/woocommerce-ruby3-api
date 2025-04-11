@@ -27,5 +27,25 @@ jobs:
     - name: Install dependencies
       run: bundle install
 
-    - name: Run tests and security checks
-      run: bundle exec rake check 
+    - name: Run tests
+      run: bundle exec rake test
+      
+  lint:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: '3.3'
+        bundler-cache: true
+
+    - name: Install dependencies
+      run: bundle install
+
+    - name: Run RuboCop
+      run: bundle exec rubocop
+      
+    - name: Run security audit
+      run: bundle exec rake bundle:audit 
