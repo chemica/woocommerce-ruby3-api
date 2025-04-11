@@ -4,12 +4,6 @@ require_relative "test_helper"
 
 class OauthTest < Minitest::Test
   def setup
-    @basic_auth = WooCommerce::API.new(
-      "https://dev.test/",
-      "user",
-      "pass"
-    )
-
     @oauth = WooCommerce::API.new(
       "http://dev.test/",
       "user",
@@ -72,5 +66,26 @@ class OauthTest < Minitest::Test
 
     assert_equal 202, response.code
     assert_equal '{"message":"Permanently deleted product"}', response.body
+  end
+
+  def test_adding_query_params
+    url = @oauth.send(:add_query_params, "foo.com", filter: { sku: "123" }, order: "created_at")
+
+    assert_equal url, Addressable::URI.encode("foo.com?filter[sku]=123&order=created_at")
+  end
+
+  def test_invalid_signature_method
+    client = WooCommerce::API.new("http://dev.test/", "user", "pass", signature_method: "GARBAGE")
+    assert_raises WooCommerce::OAuth::InvalidSignatureMethodError do
+      client.get "products"
+    end
+  end
+
+  def test_inspect_hides_sensitive_data
+    assert_match(/consumer_key="\[FILTERED\]"/, @oauth.inspect)
+    assert_match(/consumer_secret="\[FILTERED\]"/, @oauth.inspect)
+    assert_match(/signature_method="\[FILTERED\]"/, @oauth.inspect)
+    refute_match(/user/, @oauth.inspect)
+    refute_match(/pass/, @oauth.inspect)
   end
 end
