@@ -1,0 +1,75 @@
+require:
+  - rubocop-performance
+  - rubocop-minitest
+
+AllCops:
+  TargetRubyVersion: 3.1
+  NewCops: enable
+  SuggestExtensions: false
+  Exclude:
+    - 'vendor/**/*'
+    - 'tmp/**/*'
+    - 'bin/**/*'
+
+# Layout
+Layout/LineLength:
+  Max: 120
+
+# Style
+Style/Documentation:
+  Enabled: false
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+
+Style/FrozenStringLiteralComment:
+  Enabled: true
+  EnforcedStyle: always
+
+Style/SymbolArray:
+  EnforcedStyle: brackets
+
+Style/WordArray:
+  EnforcedStyle: brackets
+
+# Metrics
+Metrics/AbcSize:
+  Max: 17
+
+Metrics/CyclomaticComplexity:
+  Max: 7
+
+Metrics/MethodLength:
+  Max: 10
+
+Metrics/ClassLength:
+  Max: 100
+
+Metrics/ModuleLength:
+  Max: 100
+
+Metrics/BlockLength:
+  Exclude:
+    - "test/**/*"
+
+# Naming
+Naming/MethodParameterName:
+  AllowedNames:
+    - id
+    - ip
+    - to
+    - by
+    - on
+    - in
+    - at
+    - as
+    - of
+    - up
+
+Naming/FileName:
+  Exclude:
+    - 'lib/woocommerce-ruby3-api.rb'
+
+# Minitest
+Minitest/MultipleAssertions:
+  Max: 5 
