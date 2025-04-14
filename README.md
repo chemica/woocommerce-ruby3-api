@@ -1,6 +1,6 @@
 # WooCommerce Ruby 3 API
 
-A Ruby wrapper for the WooCommerce REST API. Easily interact with the WooCommerce REST API using this library, optimized for Ruby 3.0+.
+A Ruby wrapper for the WooCommerce REST API. Easily interact with the WooCommerce REST API using this library, optimized for Ruby 3.1+.
 
 [![Gem Version](https://badge.fury.io/rb/woocommerce-ruby3-api.svg?bust=3)](https://badge.fury.io/rb/woocommerce-ruby3-api)
 [![Tests](https://github.com/chemica/woocommerce-ruby3-api/actions/workflows/test.yml/badge.svg?branch=main&bust=1)](https://github.com/chemica/woocommerce-ruby3-api/actions/workflows/test.yml)
