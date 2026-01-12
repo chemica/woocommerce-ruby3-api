@@ -34,7 +34,7 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency "addressable", "~> 2.8.1"
   s.add_runtime_dependency "base64", "~> 0.2.0"
   s.add_runtime_dependency "httparty", "~> 0.24.0"
-  s.add_runtime_dependency "json", "~> 2.10.2", ">= 2.6.0"
+  s.add_runtime_dependency "json", ">= 2.10.2", "< 2.19.0"
   s.add_runtime_dependency "rexml", "~> 3.4.2"
 
   # Security measures
