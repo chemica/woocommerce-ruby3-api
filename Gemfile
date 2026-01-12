@@ -8,7 +8,7 @@ gemspec
 # Development dependencies
 group :development, :test do
   gem "bundler-audit", "~> 0.9.1"
-  gem "minitest", "~> 5.25.5"
+  gem "minitest", "~> 5.27.0"
   gem "rake", "~> 13.2.1"
   gem "rubocop", "~> 1.59.0"
   gem "rubocop-minitest", "~> 0.34.5"
