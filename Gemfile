@@ -13,5 +13,5 @@ group :development, :test do
   gem "rubocop", "~> 1.59.0"
   gem "rubocop-minitest", "~> 0.34.5"
   gem "rubocop-performance", "~> 1.20.1"
-  gem "webmock", "~> 3.25.1"
+  gem "webmock", "~> 3.26.1"
 end
