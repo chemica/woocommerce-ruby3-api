@@ -208,6 +208,7 @@ puts response.headers["x-wc-totalpages"] # Total of pages
 ## Release History
 
 ### Ruby 3 Version (woocommerce-ruby3-api)
+- 2026-06-08 - 1.5.5 - Bump addressable dependency to ~> 2.9.0.
 - 2025-04-11 - 1.5.3 - Hides sensitive information from ruby "inspect". Prevents accidental exposure in logs or console output.
 - 2025-04-11 - 1.5.2 - Fixes gemfile.lock issue.
 - 2025-04-11 - 1.5.1 - Adds RuboCop for code quality. Fixes RuboCop violations. Refactors code and tests for easier maintainability.

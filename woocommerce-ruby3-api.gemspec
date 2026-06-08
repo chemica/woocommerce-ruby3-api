@@ -31,7 +31,7 @@ Gem::Specification.new do |s|
   s.rdoc_options = ["--charset=UTF-8"]
   s.extra_rdoc_files = ["README.md", "LICENSE"]
 
-  s.add_runtime_dependency "addressable", "~> 2.8.1"
+  s.add_runtime_dependency "addressable", "~> 2.9.0"
   s.add_runtime_dependency "base64", "~> 0.2.0"
   s.add_runtime_dependency "httparty", "~> 0.24.0"
   s.add_runtime_dependency "json", "~> 2.10.2", ">= 2.6.0"
