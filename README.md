@@ -208,6 +208,7 @@ puts response.headers["x-wc-totalpages"] # Total of pages
 ## Release History
 
 ### Ruby 3 Version (woocommerce-ruby3-api)
+- 2026-08-25 - 1.5.6 - Require json >= 2.19.9 to address CVE-2026-54696.
 - 2026-06-08 - 1.5.5 - Bump addressable dependency to ~> 2.9.0.
 - 2025-04-11 - 1.5.3 - Hides sensitive information from ruby "inspect". Prevents accidental exposure in logs or console output.
 - 2025-04-11 - 1.5.2 - Fixes gemfile.lock issue.

@@ -1,11 +1,11 @@
 PATH
   remote: .
   specs:
-    woocommerce-ruby3-api (1.5.5)
+    woocommerce-ruby3-api (1.5.6)
       addressable (~> 2.9.0)
       base64 (~> 0.2.0)
       httparty (~> 0.24.0)
-      json (~> 2.10.2, >= 2.6.0)
+      json (>= 2.19.9)
       rexml (~> 3.4.2)
 
 GEM
@@ -28,7 +28,7 @@ GEM
       csv
       mini_mime (>= 1.0.0)
       multi_xml (>= 0.5.2)
-    json (2.10.2)
+    json (2.21.2)
     language_server-protocol (3.17.0.4)
     mini_mime (1.1.5)
     minitest (5.25.5)
